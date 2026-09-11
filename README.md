@@ -40,4 +40,19 @@ kubectl delete deployment deployment-name
 ## delete target deployment that are created from manifeast file
 kubectl delete -f file-name.yaml
 
+## list pod with additional details
+kubectl get pods -o wide
+
+## list namespaces
+kubectl get ns
+
+## Get the specific pods which falls under the namespaces
+kubectl get pods -n namespace-name
+
+## create the namespace
+kubectl create namespace/ns namespace_name
+
+## delete namespaces 
+kubectl delete namespace/ns namespace_name
+
 

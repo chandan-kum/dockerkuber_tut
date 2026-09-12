@@ -8,7 +8,7 @@ kubectl cluster-info
 kubectl get nodes
 
 ## check pods 
-kubectl get pods
+kubectl get pods (it show pods in default namespace) / kubectl get pods -n namespace-name
 
 ## create deployment
 kubectl create deployment nginx(deployment name) --image=nginx:latest
@@ -55,4 +55,11 @@ kubectl create namespace/ns namespace_name
 ## delete namespaces 
 kubectl delete namespace/ns namespace_name
 
+## check kubernatic api resources
+kubectl api-resources | grep specific-name
 
+## get lable of namespace
+kubectl get ns --show-labels
+
+## describe namespace
+kubectl describe namespace/ns namespace-name

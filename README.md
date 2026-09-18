@@ -63,3 +63,7 @@ kubectl get ns --show-labels
 
 ## describe namespace
 kubectl describe namespace/ns namespace-name
+
+## Argocd port forwording
+kubectl port-forward service/my-argo-cd-argocd-server -n argocd 8081:443
+

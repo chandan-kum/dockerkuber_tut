@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    targetRevision: HEAD
+    path: guestbook
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: guestbook
+
+
+#commands
+#kubectl apply -f kubernatic/sample-app.yaml
+#kubectl get app -n argocd
+#kubectl delete -f kubernatic/sample-app.yaml
+#kubectl delete pods,services --all -n guestbook
+#kubectl port-forward services/guestbook-ui -n guestbook 8082:80
+#kubectl get deployment,replicaset,pods -n guestbook
+#kubectl scale deployment guestbook-ui --replicas=0 -n guestbook
+# kubectl get svc  -n guestbook
+
+
+
+

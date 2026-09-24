@@ -33,3 +33,13 @@ docker exec -it container-name /bin/bash
 ## copy file from local machine to docker container
 docker cp file_address container_name:/container_folder_addess
 
+## jenkins container run with mount volume 
+ docker run -d --name=jenkins --restart=unless-stopped -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -e TZ=Asia/Kolkata jenkins/jenkins:lts
+## only install docker cli in jenkins
+ chmod 666 /var/run/docker.sock
+
+curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
+
+## go into docker container with root user
+docker exec -it -u root container id/name /bin/bash
+
